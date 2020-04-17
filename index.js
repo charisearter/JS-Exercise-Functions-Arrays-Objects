@@ -35,8 +35,8 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(name) {
-  return `Goodbye, ${name}. Have a great day.`;
+function sayGoodbye(name) { //argument is the name user inputs
+  return `Goodbye, ${name}. Have a great day.`; //return string with name user inputted
   /* code here */
 }
 
@@ -54,9 +54,9 @@ function sayGoodbye(name) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(temp) {
+function temperatureCtoF(temp) { //argument that uses the temp user inputs
   let f= (temp * 1.8) + 32;  //1.8 = 9/5
-return Math.round(f);
+return Math.round(f); // return variable f as a whole number
 }
 
 /**
@@ -76,14 +76,13 @@ return Math.round(f);
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(temp, unit) {
-  if (unit ==='F'){
-  return `${Math.round(temp)}${unit}`;
+function temperatureInF(temp, unit) { // arguments are the temp and unit the user inputs
+  if (unit ==='F'){ // if the unit === F
+  return `${Math.round(temp)}${unit}`; // return the temp as a whole number and the unit e 88F
 
-  } else if (unit === 'C'){ 
-    return temperatureCtoF(temp) + 'F';
-  //  let c = (temp * 1.8) + 32;  //1.8 = 9/5
-  // return `${Math.round(c)}${unit}`;
+  } else if (unit === 'C'){  // if the unit === C
+    return temperatureCtoF(temp) + 'F'; // return result using the CtoF function with the argument temp and add F
+  
   }
   /* code here */
 }
@@ -105,8 +104,8 @@ function temperatureInF(temp, unit) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(id, name, email) {
-  return {id, name, email};
+function makePersonObject(id, name, email) {  //arguments are id name and email user inputs
+  return {id, name, email}; // it will return user input as an object {}
 
 }
 
@@ -144,10 +143,10 @@ function getName(obj) { //objectName is the parameter
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(arr) { //arr with strings that will be checked
-  for (let i=0; i < arr.length; i++){
-    if (arr[i] == 'apple'){
-    return (i);
+function appleIndex(arr) { //argument of an arr with strings that will be checked
+  for (let i=0; i < arr.length; i++){ // loops over array
+    if (arr[i] === 'apple'){ // if array index is equal to apple
+    return (i); // return where it is in the index
     }
   }
 }
@@ -167,16 +166,16 @@ function appleIndex(arr) { //arr with strings that will be checked
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(arr) {
-  let otherArr=[];
-  for (let i = 0; i < arr.length; i++){
-    if (arr[i]=== 'apple'){
-      otherArr.push(true);
+function isItAnApple(arr) {  //the argument is an array
+  let otherArr=[]; // new empty array for information to go
+  for (let i = 0; i < arr.length; i++){ // loops over initial array
+    if (arr[i]=== 'apple'){ // if the initial array's index === 'apple'
+      otherArr.push(true); // push into the other array the boolean true
     }else {
-      otherArr.push(false);
+      otherArr.push(false); // if not === apple push into the array false
     }
   }
-  return otherArr;
+  return otherArr; // return the other array
 }
 
 
@@ -233,9 +232,9 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
-  const x = inventory[index];
-  return `This is a ${x.car_make} ${x.car_model}`
+function getCarInfoByIndex(inventory, index) { //parameters are the inventory array and the index of the items inside
+  const x = inventory[index]; // variable to hold the parameter information user type inventory[index number]
+  return `This is a ${x.car_make} ${x.car_model}` // string that tells variable. car make and model
 }
 
 /**
@@ -249,9 +248,9 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(inventory) {
-  let x = inventory.length-1; //tells me the last index thing
-  return `This is a ${inventory[x].car_make} ${inventory[x].car_model}` // arrName[index in arr]. key
+function getLastCarInfo(inventory) { //inventory is the array
+  let x = inventory.length-1; //tells me the last index key/values
+  return `This is a ${inventory[x].car_make} ${inventory[x].car_model}` // arrName[index in arr]. key string
 }
 
 /**
@@ -263,12 +262,12 @@ function getLastCarInfo(inventory) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(arr) {
-  const carYears =[];
-  for(let i = 0; i < arr.length; i++){
-    carYears.push(arr[i].car_year);
+function getModelYears(arr) { //parameter is the array
+  const carYears =[]; //new empty array to put car years into
+  for(let i = 0; i < arr.length; i++){//look through whole array
+    carYears.push(arr[i].car_year); //push in to the car years array all the car year key value
   }
-  return carYears;
+  return carYears; //return the car years in the inventory
   /* code here */
 }
 
@@ -290,7 +289,7 @@ function getCarInfoById(arr, id) { //parameters arrayName and id of object
   /* code here */
   for (let i=0; i < arr.length; i++){ //for loop loops over array of objects
     if (arr[i].id === id ){ //if array index [i(object)] .id === argument id
-  return `This is a ${arr[i].car_make} ${arr[i].car_model}`;
+  return `This is a ${arr[i].car_make} ${arr[i].car_model}`; //return string with array object index. car make and model
     }
   }
 }
@@ -300,7 +299,7 @@ function getCarInfoById(arr, id) { //parameters arrayName and id of object
  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
  * COMPLETING ALL NON-STRETCH CHALLENGES IN THE REPOSITORY!
  * 
- * @instructions
+ * @instructions //not returning all
  * We need a utility to find older cars!
  * getOlderCars takes two arguments:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
@@ -309,8 +308,20 @@ function getCarInfoById(arr, id) { //parameters arrayName and id of object
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory, maxYear) {// inventory is an array and maxYear is the year
+  //have an empty array for information to go
+  const oldCars = [];
+  //make a for loop to loop over the array named inventory
+  for (let i=0; i < inventory.length; i++){
+    //if the array index object.car_year <= the maxYear the user inputed
+    if(inventory[i].car_year <= maxYear) {
+      //put the array index object into the empty array
+      oldCars.push(inventory[i]);
+    }
+  //return the new array (should be in the same order as original array)
+  return oldCars;
+  }
+  
 }
 
 /**
