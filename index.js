@@ -372,13 +372,14 @@ function carMaker(number) { // parameter is a number from user
     odometer: number, //odometer uses number argument
     drive: function(distance){ //drive is a method with distance argument
       if (distance > 0){ //if distance is greater than 0 
+        this.odometer = this.odometer + 1;
         return  number + distance; //add distance to number
       } // closes if statement
       return `The odometer is now ${this.drive}`; //returns odometer reading
     } // closes drive method
   }; // closes object
-  obj.odometer.number = obj.number + obj.distance;
   //inside the drive method -- distance increase the odometer and odometer value is update
+  console.log(obj);
 return obj; //return the object
 } //ends function
 
