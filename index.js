@@ -249,7 +249,7 @@ function getCarInfoByIndex(inventory, index) { //parameters are the inventory ar
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(inventory) { //inventory is the array
-  let x = inventory.length-1; //tells me the last index key/values
+  let x = inventory.length-1; //tells me inventory array last index key/values
   return `This is a ${inventory[x].car_make} ${inventory[x].car_model}` // arrName[index in arr]. key string
 }
 
@@ -266,10 +266,10 @@ function getModelYears(arr) { //parameter is the array
   const carYears =[]; //new empty array to put car years into
   for(let i = 0; i < arr.length; i++){//look through whole array
     carYears.push(arr[i].car_year); //push in to the car years array all the car year key value
-  }
+  }//closes for loop
   return carYears; //return the car years in the inventory
   /* code here */
-}
+}// end of function
 
 /**
  * ### Challenge `getCarInfoById`
@@ -290,16 +290,16 @@ function getCarInfoById(arr, id) { //parameters arrayName and id of object
   for (let i=0; i < arr.length; i++){ //for loop loops over array of objects
     if (arr[i].id === id ){ //if array index [i(object)] .id === argument id
   return `This is a ${arr[i].car_make} ${arr[i].car_model}`; //return string with array object index. car make and model
-    }
-  }
-}
+    } // closes if statement
+  }//closes for loop
+}//end of function
 
 /**
  * ### Challenge `getOlderCars`
  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
  * COMPLETING ALL NON-STRETCH CHALLENGES IN THE REPOSITORY!
  * 
- * @instructions //not returning all
+ * @instructions //not returning all?????????????????????????????????????????????????
  * We need a utility to find older cars!
  * getOlderCars takes two arguments:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
@@ -317,11 +317,11 @@ function getOlderCars(inventory, maxYear) {// inventory is an array and maxYear 
     if(inventory[i].car_year <= maxYear) {
       //put the array index object into the empty array
       oldCars.push(inventory[i]);
-    }
+    } //closes if statement
   //return the new array (should be in the same order as original array)
-  return oldCars;
-  }
   
+  }//closes for loop //make sure return is out of loop
+  return oldCars;
 }
 
 /**
@@ -337,10 +337,23 @@ function getOlderCars(inventory, maxYear) {// inventory is an array and maxYear 
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(inventory) { //array with the cars
+  //an empty array to put information in
+  const germanCars = [];
+  //for loop to go over entire array or inventory
+  for(let i=0; i<inventory.length; i++){
+    //if the inventory[i].car_make name matches Audi Merceder-Benz Volkswagen or BMW 
+    if (inventory[i].car_make === 'Audi' || inventory[i].car_make === 'Mercedes-Benz' || inventory[i].car_make === 'Volkswagen' || inventory[i].car_make === 'BMW'){
+      //push into new array
+      germanCars.push(inventory[i]);
+    } //closes if statement
+  } // closes for loop
+     //return the new array
+     return germanCars; //make sure to put return out of loop
 }
 
+
+///ONLY @ of 3 Correct not sure why ?????????????
 /**
  * ### Challenge `carMaker`
  * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
@@ -354,9 +367,21 @@ function getGermanCars(/* code here */) {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
-}
+function carMaker(number) { // parameter is a number from user
+  const obj = { //make an object
+    odometer: number, //odometer uses number argument
+    drive: function(distance){ //drive is a method with distance argument
+      if (distance > 0){ //if distance is greater than 0 
+        return  number + distance; //add distance to number
+      } // closes if statement
+      return `The odometer is now ${this.drive}`; //returns odometer reading
+    } // closes drive method
+  }; // closes object
+  obj.odometer.number = obj.number + obj.distance;
+  //inside the drive method -- distance increase the odometer and odometer value is update
+return obj; //return the object
+} //ends function
+
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
